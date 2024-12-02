@@ -5,7 +5,10 @@
 </head>
 <body>
 <h1>Lista de Pedidos</h1>
+
+<!-- Link para adicionar um novo pedido -->
 <a href="/pedidos/novo">Adicionar Novo Pedido</a>
+
 <table border="1">
     <thead>
     <tr>
@@ -23,11 +26,16 @@
         <td th:text="${pedido.cliente.nome}"></td>
         <td th:text="${pedido.total}"></td>
         <td>
+            <!-- Link para editar o pedido -->
             <a th:href="@{/pedidos/editar/{id}(id=${pedido.id})}">Editar</a>
-            <a th:href="@{/pedidos/excluir/{id}(id=${pedido.id})}">Excluir</a>
+
+            <!-- Link para excluir o pedido com confirmação -->
+            <a th:href="@{/pedidos/excluir/{id}(id=${pedido.id})}"
+               onclick="return confirm('Tem certeza de que deseja excluir este pedido?');">Excluir</a>
         </td>
     </tr>
     </tbody>
 </table>
+
 </body>
 </html>

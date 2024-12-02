@@ -35,11 +35,12 @@ public class PedidoController {
 
     @GetMapping("/novo")
     public String exibirFormularioNovoPedido(Model model) {
-        model.addAttribute("pedido", new Pedido());
-        model.addAttribute("clientes", clienteRepository.findAll());
-        model.addAttribute("produtos", produtoRepository.findAll());
+        model.addAttribute("pedido", new Pedido()); // Corrigido para "pedido"
+        model.addAttribute("clientes", clienteRepository.findAll()); // Corrigido para "clientes"
+        model.addAttribute("produtos", produtoRepository.findAll()); // Preservado
         return "formulario_pedido";
     }
+
 
     @PostMapping
     public String salvarPedido(@ModelAttribute Pedido pedido) {
@@ -53,4 +54,19 @@ public class PedidoController {
         pedidoRepository.deleteById(id);
         return "redirect:/pedidos";
     }
+
+    @GetMapping("/pedidos")
+    public String redirecionarParaPedidos() {
+        return "redirect:/pedidos";
+    }
+
+    @GetMapping("/editar/{id}")
+    public String editarPedido(@PathVariable Long id, Model model) {
+        Pedido pedido = pedidoRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Pedido inválido: " + id));
+        model.addAttribute("pedido", pedido); // Passa o pedido existente para o template
+        model.addAttribute("clientes", clienteRepository.findAll()); // Passa a lista de clientes
+        model.addAttribute("produtos", produtoRepository.findAll()); // Passa a lista de produtos
+        return "formulario_pedido"; // Mapeia para o template de edição
+    }
+
 }
