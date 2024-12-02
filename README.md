@@ -27,7 +27,6 @@ Este é um projeto de aplicação web para gerenciamento de **Clientes**, **Prod
 Antes de começar, você precisará:
 
 1. **Java 11 ou superior**: Verifique a versão instalada com:
-   ```bash
    java -version
 
 
@@ -35,8 +34,7 @@ Antes de começar, você precisará:
 1. Clone o Repositório
 Faça o clone do projeto para sua máquina local:
 
-bash
-Copiar código
+
 git clone https://github.com/seu-usuario/crud-thymeleaf.git
 cd crud-thymeleaf
 2. Configure o Banco de Dados
@@ -44,23 +42,18 @@ Abra o terminal do MySQL ou uma ferramenta como MySQL Workbench.
 
 Crie o banco de dados chamado crud_thymeleaf:
 
-sql
-Copiar código
 CREATE DATABASE crud_thymeleaf;
 Edite o arquivo src/main/resources/application.properties com suas credenciais de banco de dados:
 
-properties
-Copiar código
 spring.datasource.url=jdbc:mysql://localhost:3306/crud_thymeleaf
 spring.datasource.username=seu_usuario
 spring.datasource.password=sua_senha
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
+
 3. Compile as Dependências
 Execute o comando para instalar as dependências do projeto usando o Maven:
 
-bash
-Copiar código
 mvn install
 4. Execute a Aplicação
 Inicie a aplicação com o comando:
@@ -70,8 +63,6 @@ Copiar código
 mvn spring-boot:run
 Se tudo estiver configurado corretamente, você verá mensagens no console indicando que a aplicação foi iniciada. Por padrão, ela estará disponível em:
 
-arduino
-Copiar código
 http://localhost:8080
 🌐 Como Usar a Aplicação
 Acesse a URL inicial no navegador: http://localhost:8080.
@@ -83,8 +74,6 @@ Siga os links das páginas para cadastrar, editar ou excluir registros.
 🗂 Estrutura do Projeto
 O projeto possui a seguinte estrutura:
 
-bash
-Copiar código
 src
 ├── main
 │   ├── java
