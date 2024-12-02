@@ -67,8 +67,8 @@ http://localhost:8080
 Acesse a URL inicial no navegador: http://localhost:8080.
 Use as seguintes URLs para acessar as páginas de cada funcionalidade:
 Clientes: http://localhost:8080/cliente
-Produtos: http://localhost:8080/produto
-Pedidos: http://localhost:8080/pedido
+Produtos: http://localhost:8080/produtos
+Pedidos: http://localhost:8080/pedidos
 Siga os links das páginas para cadastrar, editar ou excluir registros.
 🗂 Estrutura do Projeto
 O projeto possui a seguinte estrutura:
