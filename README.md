@@ -58,12 +58,11 @@ mvn install
 4. Execute a Aplicação
 Inicie a aplicação com o comando:
 
-bash
-Copiar código
 mvn spring-boot:run
 Se tudo estiver configurado corretamente, você verá mensagens no console indicando que a aplicação foi iniciada. Por padrão, ela estará disponível em:
 
 http://localhost:8080
+
 🌐 Como Usar a Aplicação
 Acesse a URL inicial no navegador: http://localhost:8080.
 Use as seguintes URLs para acessar as páginas de cada funcionalidade:
